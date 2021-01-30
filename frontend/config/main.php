@@ -11,6 +11,10 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'aliases' => [
+        '@frontends' => '@frontend/views/layouts/home.php',
+
+    ],
     'components' => [
         'eventCustom' => [
             'class' => 'frontend\components\EventComponent',

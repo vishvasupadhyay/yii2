@@ -62,6 +62,13 @@ class RegisterController extends Controller
                     $model->password = $filename[6];
                     // print_r($model);
                     $model->save(false);
+                    $msg = "success";
+                }
+            }
+            if ($msg == "success") {
+                if (unlink('uploads/' . $name)) {
+                    echo "deleted";
+                    $this->redirect('export');
                 }
             }
         } else {
@@ -104,6 +111,7 @@ class RegisterController extends Controller
 
     public function actionIndex()
     {
+
         // Yii::$app->eventCustom->trigger(EventComponent::EVENT_HELLO);
         $connect = Yii::$app->get('db2');
         $model = new RegistrationForm();
@@ -247,6 +255,7 @@ class RegisterController extends Controller
     {
         $connect = Yii::$app->get('db2');
         $cache = Yii::$app->cache;
+        return $this->render('create', [], 'column');
         $key = 'new';
         $data = $cache->get($key);
 

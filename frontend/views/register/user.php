@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <td><?php echo $value['id']; ?></td>
                     <td><?php echo $value['name']; ?></td>
                     <td><?php echo $value['mobile']; ?></td>
-                    <td><?php echo $value['email']; ?></td>
+                    <td><?php echo  $value['email']; ?></td>
                     <td><?php echo $value['dob']; ?></td>
                     <td><img src="../<?php echo $value['image'] ?>"></td>
                     <td><a href="edit?edit=<?php echo $value['id']; ?>" class="btn btn-success">Edit</a>
